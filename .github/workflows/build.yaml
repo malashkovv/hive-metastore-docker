@@ -22,4 +22,4 @@ jobs:
           docker build \
             --build-arg METASTORE_VERSION=$HIVE_METASTORE_VERSION \
             --build-arg HADOOP_VERSION=$HADOOP_VERSION \
-            -t vmalashkov/apache-hive-metastore:metastore-$HIVE_METASTORE_VERSION-h${HADOOP_VERSION} .
+            -t vmalashkov/apache-hive-metastore:$HIVE_METASTORE_VERSION-h${HADOOP_VERSION} .

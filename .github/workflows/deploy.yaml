@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         hadoop: ["3.2.0"]
-        hive-metastore: ["3.0.0", "3.1.2"]
+        hive-metastore: ["3.0.0"]
     env:
       HIVE_METASTORE_VERSION: ${{ matrix.hive-metastore }}
       HADOOP_VERSION: ${{ matrix.hadoop }}
@@ -27,8 +27,8 @@ jobs:
           docker build \
             --build-arg METASTORE_VERSION=$HIVE_METASTORE_VERSION \
             --build-arg HADOOP_VERSION=$HADOOP_VERSION \
-            -t vmalashkov/apache-hive-metastore:metastore-$HIVE_METASTORE_VERSION-h${HADOOP_VERSION} .
+            -t vmalashkov/apache-hive-metastore:$HIVE_METASTORE_VERSION-h${HADOOP_VERSION} .
 
       - name: Push image
         run: |
-          docker push vmalashkov/apache-hive-metastore:metastore-$HIVE_METASTORE_VERSION-h${HADOOP_VERSION}
+          docker push vmalashkov/apache-hive-metastore:$HIVE_METASTORE_VERSION-h${HADOOP_VERSION}
