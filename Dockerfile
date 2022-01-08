@@ -17,7 +17,6 @@ RUN curl -L https://dlcdn.apache.org/hive/hive-standalone-metastore-${METASTORE_
     cp mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.jar ${HIVE_HOME}/lib/ && \
     rm -rf  mysql-connector-java-${MYSQL_CONNECTOR_VERSION}
 
-COPY conf/metastore-site.xml ${HIVE_HOME}/conf
 COPY scripts/entrypoint.sh /entrypoint.sh
 
 RUN groupadd -r hive --gid=1000 && \
