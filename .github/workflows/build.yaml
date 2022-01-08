@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         hadoop: ["3.2.0"]
-        hive-metastore: ["3.0.0", "3.1.2"]
+        hive-metastore: ["3.0.0"]
     env:
       HIVE_METASTORE_VERSION: ${{ matrix.hive-metastore }}
       HADOOP_VERSION: ${{ matrix.hadoop }}
