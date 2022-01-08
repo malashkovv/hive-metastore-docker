@@ -15,7 +15,7 @@ RUN curl -L https://dlcdn.apache.org/hive/hive-standalone-metastore-${METASTORE_
     curl -L https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz | tar zxf - && \
     curl -L https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz | tar zxf - && \
     cp mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.jar ${HIVE_HOME}/lib/ && \
-    rm -rf  mysql-connector-java-${MYSQL_CONNECTOR_VERSION} \
+    rm -rf  mysql-connector-java-${MYSQL_CONNECTOR_VERSION}
 
 COPY scripts/entrypoint.sh /entrypoint.sh
 
